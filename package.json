@@ -1,0 +1,28 @@
+{
+  "name": "wdio",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/cli": "^8.36.1",
+    "@wdio/cucumber-framework": "^8.36.1",
+    "@wdio/local-runner": "^8.36.1",
+    "@wdio/spec-reporter": "^8.36.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "scripts": {
+    "wdio": "rimraf ./_results_ && wdio run ./wdio.conf.ts",
+    "allure-generate": "allure generate ./_results_/allure-raw --clean -o ./_results_/allure-report",
+    "allure-serve": "allure open ./_results_/allure-report -h localhost",
+    "allure-report": "npm run allure-generate && npm run allure-serve"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.16",
+    "@wdio/allure-reporter": "^8.39.0",
+    "@wdio/junit-reporter": "^8.39.0",
+    "allure-commandline": "^2.29.0",
+    "chai": "^5.1.1",
+    "rimraf": "^5.0.7",
+    "wdio-video-reporter": "^5.2.0"
+  }
+}
